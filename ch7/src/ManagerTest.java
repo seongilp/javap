@@ -6,6 +6,7 @@ public class ManagerTest {
 		//System.out.println(lee.name + "은 " + lee.jobOfManage + "담당입니다.");
 		//System.out.println(number);
 		lee.print();
+		lee.test();
 	}
 }
 
@@ -17,6 +18,12 @@ class Manager extends Employee {
 	void print() {
 		System.out.println(name + " : " + age);
 		System.out.println(jobOfManage);
+	}
+	void test() {
+		int number = 300;
+		System.out.println(number);
+		System.out.println(this.number);
+		System.out.println(super.number);
 	}
 }
 

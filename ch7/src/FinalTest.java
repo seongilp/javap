@@ -21,8 +21,7 @@ class B {
 	int j = 20;
 	void mb() {
 		A a1 = new A();
-		a1.ma();
-		System.out.println("B");
+		a1.ma();		System.out.println("B");
 	}
 	void ma() {
 		System.out.println("A의 하위클래스");

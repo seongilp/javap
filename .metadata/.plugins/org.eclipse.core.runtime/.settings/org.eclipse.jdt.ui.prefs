@@ -1,4 +1,4 @@
-#Wed Aug 24 11:42:18 KST 2011
+#Wed Aug 24 16:03:50 KST 2011
 content_assist_proposals_foreground=255,146,66
 semanticHighlighting.inheritedMethodInvocation.enabled=true
 org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8"?><templates/>
@@ -45,6 +45,7 @@ semanticHighlighting.interface.color=135,240,37
 org.eclipse.jdt.ui.text.templates_migrated=true
 org.eclipse.jface.textfont=1|Consolas|12.0|0|WINDOWS|1|-16|0|0|0|400|0|0|0|0|3|2|1|49|Consolas;
 tabWidthPropagated=true
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8"?><history maxLHS\="100" maxRHS\="10"/>
 semanticHighlighting.typeParameter.color=205,177,173
 org.eclipse.jdt.ui.javadoclocations.migrated=true
 semanticHighlighting.methodDeclarationName.color=241,196,56
