@@ -1,0 +1,12 @@
+class Person {
+	String 	name;
+	int 	age;
+	String 	nation;
+}
+
+public class PersonTest {
+	public static void main(String[] args) {
+		Person p1 = new Person("ÀÌÀÚ¹Ù",30,"Korea");
+		
+	}
+}

@@ -1,0 +1,14 @@
+
+
+public class StaticDemo {
+
+}
+
+class Employee {
+	String	name;
+	int		age;
+	static int empNum = 0;
+	public Employee() {
+		System.out.println("사원 객체 생성 " + ++empNum);
+	}
+}

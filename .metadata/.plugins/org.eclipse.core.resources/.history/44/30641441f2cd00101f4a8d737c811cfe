@@ -1,0 +1,12 @@
+
+public class Stu {
+	private int 	id;
+	private String 	name;
+	private String 	major;
+	Stu(int id, String name, String major) {
+		this.id 	= id;
+		this.name 	= name;
+		this major 	= major;
+	}
+	
+}

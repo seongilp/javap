@@ -1,0 +1,13 @@
+
+class Adding {
+	int add(int i, int j) {
+		return i+j;
+	}
+}
+
+public class OverloadingTest {
+	public static void main(String[] args) {
+		Adding a = new Adding();
+		a.add(1,2);
+	}
+}

@@ -1,0 +1,15 @@
+public class hw1 {
+	public static void main(String[] args) {
+		int i[] = new int[5];
+		i[0] = Integer.parseInt(args[0]);
+		i[1] = Integer.parseInt(args[1]);
+		i[2] = Integer.parseInt(args[2]);
+		i[3] = i[0]+i[1]+i[2];
+		i[4] = i[3]/3;
+		System.out.println("Total : " + i[3]);
+		System.out.println("Sum : " + i[4]);
+		if(i[4] > 90) {
+			System.out.println("Your grade is " + A);
+		}
+	}
+}

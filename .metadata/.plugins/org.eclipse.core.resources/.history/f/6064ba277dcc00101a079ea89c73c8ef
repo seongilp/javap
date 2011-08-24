@@ -1,0 +1,27 @@
+public class variableTest {
+	public static void main(String[] args) {
+		/*int i = 10;
+		int j = 20;
+		int k = i + i;
+		System.out.println(k);
+		System.out.println(k+j);
+		System.out.println("°á°ú=" + k);*/
+		
+		int i = 10;
+		String s = "java";
+		double d = 3.14;
+		System.out.println("i=" + i);
+		System.out.println("s=" + s);
+		System.out.println("d=" + d);
+
+		i = i + i;
+		s = "servlet";
+		d = d + 1;
+
+		System.out.println("i=" + i);
+		System.out.println("s=" + s);
+		System.out.println("d=" + d);
+
+		
+	}
+}

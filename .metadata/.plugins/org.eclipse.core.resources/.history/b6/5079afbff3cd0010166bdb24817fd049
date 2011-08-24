@@ -1,0 +1,17 @@
+class Test {
+	static int i = 10;
+	int j = 20;
+	static void m1() {
+		System.out.println(i++);
+		System.out.println(j++);
+	}
+	void m2() {
+		System.out.println(i++);
+		System.out.println(j++);		
+	}
+}
+
+public class StaticTest {
+	public static void main(String[] args) {
+	}
+}

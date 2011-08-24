@@ -1,0 +1,30 @@
+
+public class ManagerTest {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Manager lee = new Manager();
+		lee.name = "이꾀돌";
+		lee.jobOfManage = "인사 관리";
+		System.out.println(lee.name + "은 " + lee.jobOfManage + "담당입니다.");
+	}
+
+}
+
+class Manager extends Employee {
+	String jobOfManage;
+	String boss;
+	String[] subordinate;
+}
+
+class Employee {
+	String name;
+	int number;
+	int age;
+	String title;
+	String dept;
+	String grade;
+}

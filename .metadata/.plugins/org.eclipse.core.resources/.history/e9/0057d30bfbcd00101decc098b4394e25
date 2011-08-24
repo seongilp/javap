@@ -1,0 +1,22 @@
+
+class Adding {
+	int add(int i, int j) {
+		return i+j;
+	}
+	double add(double i, double j) {
+		return i+j;
+	}
+	String add(String i, String j) {
+		return i.concat(j);
+	}
+}
+
+public class OverloadingTest {
+	public static void main(String[] args) {
+		Adding a = new Adding();
+		int result1 = a.add(1,2);
+		System.out.println(result1);
+		a.add(3.14, 2.2);
+		a.add("java","jsp");
+	}
+}

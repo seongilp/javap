@@ -1,0 +1,25 @@
+
+public class StudentTest {
+	public static void main(String[] args) {
+		Student s1 = new Student(args[0], args[1], Integer.parseInt(args[2]));
+		System.out.println(s1.name);
+	}
+
+}
+
+class Student {
+	Student(String name, String course, int courseFee) {
+		this.name = name;
+		this.course = course;
+		this.courseFee = courseFee;
+		
+	}
+	String name;
+	final String company = "»ï¼ºSDS";
+	String course;
+	int	courseFee;	
+	int	refundFee;
+	final int addFee = 5000;
+	
+	
+}

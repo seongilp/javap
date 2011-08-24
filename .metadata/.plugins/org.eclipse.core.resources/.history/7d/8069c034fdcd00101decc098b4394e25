@@ -1,0 +1,10 @@
+class Expr {
+	void add(int i) {
+		System.out.println(i++);
+	}
+}
+public class ExprTest {
+	public static void main(String[] args) {
+		
+	}
+}

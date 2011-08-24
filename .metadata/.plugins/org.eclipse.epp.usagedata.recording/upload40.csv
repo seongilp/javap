@@ -1,0 +1,11 @@
+what,kind,bundleId,bundleVersion,description,time
+stopped,bundle,org.eclipse.ltk.ui.refactoring,3.4.100.v20090604,"org.eclipse.ltk.ui.refactoring",1313999796312
+stopped,bundle,org.eclipse.team.cvs.ui,3.3.200.I20090521-1750,"org.eclipse.team.cvs.ui",1313999796343
+stopped,bundle,org.eclipse.team.ui,3.5.0.I20090430-0408,"org.eclipse.team.ui",1313999796375
+stopped,bundle,org.eclipse.compare,3.5.0.I20090514-0808,"org.eclipse.compare",1313999796375
+stopped,bundle,org.eclipse.ui.externaltools,3.2.0.v20090504,"org.eclipse.ui.externaltools",1313999796375
+stopped,bundle,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui",1313999796390
+stopped,bundle,org.eclipse.mylyn.wikitext.ui,1.1.0.v20090617-0100-e3x,"org.eclipse.mylyn.wikitext.ui",1313999796390
+stopped,bundle,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console",1313999796390
+stopped,bundle,org.eclipse.mylyn.commons.ui,3.2.0.v20090617-0100-e3x,"org.eclipse.mylyn.commons.ui",1313999796390
+stopped,bundle,org.eclipse.ui.editors,3.5.0.v20090527-2000,"org.eclipse.ui.editors",1313999796390

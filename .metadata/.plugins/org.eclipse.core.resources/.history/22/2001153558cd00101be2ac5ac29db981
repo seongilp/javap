@@ -1,0 +1,24 @@
+
+public class StudentTest {
+	public static void main(String[] args) {		
+		Student s1 = new Student(args[0], args[1], Integer.parseInt(args[2]));
+		s1.refundFee = Integer.parseInt(args[2]);
+		System.out.println("- 환급금을 계산합니다.");
+		System.out.println("과졍명이 " + args[1] + "이면");
+		System.out.println("입력한 교육비 "+(s1.refundFee*0.2+s1.addFee)+"");		
+	}
+}
+
+class Student {
+	Student(String name, String course, int courseFee) {
+		this.name 		= name;
+		this.course 	= course;
+		this.courseFee 	= courseFee;		
+	}
+	String name;
+	final String company = "삼성SDS";
+	String course;
+	int	courseFee;	
+	int	refundFee;
+	final int addFee = 5000;	
+}

@@ -1,0 +1,27 @@
+
+public class ManagerTest {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+class Manager extends Employee {
+	String jobOfManage;
+	String boss;
+	String[] subordinate;
+}
+
+class Employee {
+	String name;
+	int number;
+	int age;
+	String title;
+	String dept;
+	String grade;
+}

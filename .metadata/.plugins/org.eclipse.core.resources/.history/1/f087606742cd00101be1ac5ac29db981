@@ -1,0 +1,16 @@
+class Person {
+	String 	name;
+	int 	age;
+	String 	nation;
+}
+
+public class PersonTest {
+	public static void main(String[] args) {
+		Person p1 = new Person();
+		p1.name = "이자바";
+		p1.age = 20;
+		p1.nation = "대한민국";
+		System.out.println("p1 참고 객체 이름은 " +p1.name+"나이는"+p1.age+"국적은"+p1.nation);
+		
+	}
+}

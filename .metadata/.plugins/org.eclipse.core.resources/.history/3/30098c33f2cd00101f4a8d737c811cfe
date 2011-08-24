@@ -1,0 +1,9 @@
+
+public class Stu {
+	private int 	id;
+	private String 	name;
+	private String 	major;
+	Stu(id, name, major) {
+		
+	}
+}

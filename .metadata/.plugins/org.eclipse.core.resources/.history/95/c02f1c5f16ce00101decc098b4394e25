@@ -1,0 +1,12 @@
+public class FinalTest {
+	public static void main(String[] args) {
+		
+	}
+}
+
+class A {
+	int i = 10;
+	void ma() {
+		System.out.println("A");
+	}
+}

@@ -1,0 +1,24 @@
+public class EmployeeTest {
+	public static void main(String[] args) {
+		Employee hong = new Employee();
+		hong.name = "홍길동";
+		hong.age = 20;
+		System.out.println("한 사원의 이름은  " + hong.name + "이고, 나이는 " 
+				+ hong.age + "입니다");
+		
+		Employee me = new Employee();
+		me.name = "장길산";
+		me.age = 30;
+		System.out.println(me.name + " " + me.age);
+			
+	}
+}
+
+class Employee {
+	String 	name;
+	int 	number;
+	int 	age;
+	String 	title;
+	String 	dept;
+	String 	grade;
+}
