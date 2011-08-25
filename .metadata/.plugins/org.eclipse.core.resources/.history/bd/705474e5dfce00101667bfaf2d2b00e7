@@ -1,0 +1,12 @@
+public class exceptionTest {
+	public static void main(String[] args) {
+		try {
+			int i = Integer.parseInt(args[0]);
+			int j = Integer.parseInt(args[1]);
+			System.out.println(i/j);			
+		} catch(ArithmeticException e) {
+			e.printStackTrace();
+		}
+		System.out.println("¿Ï·á");
+	}
+}

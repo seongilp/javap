@@ -1,0 +1,9 @@
+
+class Manager extends Employee {
+	int managerFee;
+	public Manager(int i,String n, int j, int k, int l) {
+		empNum = i;
+		name = n;
+		
+	}
+}

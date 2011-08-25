@@ -1,0 +1,12 @@
+class Employee {
+	int empNum;
+	String name;
+	int baseSalary;
+	int 
+	public Employee(int i,String n,int b,int g){
+		empNum = i;
+ 	 	name  = n;
+ 	 	baseSalary = b;
+ 	 	soodang = g;
+	}
+}

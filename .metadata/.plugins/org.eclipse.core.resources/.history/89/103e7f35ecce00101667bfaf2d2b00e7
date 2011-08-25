@@ -1,0 +1,13 @@
+
+class Manager extends Employee {
+	int managerFee;
+	public Manager(int i,String n, int j, int k, int l) {
+		super();
+		empNum = i;
+		name = n;
+		baseSalary = i;
+		soodang = k;
+		managerFee = i;
+	}
+	
+}

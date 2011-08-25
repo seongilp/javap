@@ -1,0 +1,8 @@
+class Employee {
+ 		public Employee(int i,String n,int b,int g){
+ 	 	empNum = i;
+ 	 	name  = n;
+ 	 	baseSalary = b;
+ 	 	일반수당 = g;
+ 	 	}
+}

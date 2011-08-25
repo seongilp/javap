@@ -1,0 +1,15 @@
+public class exceptionTest {
+	public static void main(String[] args) {
+		try {
+			int i = Integer.parseInt(args[0]);
+			int j = Integer.parseInt(args[1]);
+			System.out.println(i/j);
+		} catch(ArithmeticException e) {
+			System.out.println("0이 아닌 값을 일력해주세요");
+		}
+		finally {
+			System.out.println("항상 출력됩니다");
+		}
+		System.out.println("완료");
+	}
+}

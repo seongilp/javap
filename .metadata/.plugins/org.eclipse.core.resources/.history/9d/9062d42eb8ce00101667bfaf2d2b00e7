@@ -1,0 +1,24 @@
+class Child {
+	int su = 20;
+	void pr() {
+		System.out.println(su);
+	}
+}
+
+class Parent {
+	int su = 10;
+	void pr() {
+		System.out.println(su);
+	}
+}
+
+public class CastingTest {
+	public static void main(String[] args) {
+		Parent p1 = new Parent();
+		System.out.println(p1.su);
+		p1.pr();
+		Parent p2 = new Child();
+		System.out.println(p2.su);
+		p2.pr();
+	}
+}

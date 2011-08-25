@@ -1,0 +1,18 @@
+public class throwsTest {
+	public static void main(String[] args) {
+		Test t = new Test();
+		
+	}
+}
+
+class Test {
+	void ma(int i) {
+		System.out.println(10/i);
+	}
+	void mb() {
+		ma(0);
+	}
+	void mc() {
+		ma(0);
+	}
+}
