@@ -1,0 +1,59 @@
+!SESSION 2011-08-25 08:49:49.890 -----------------------------------------------
+eclipse.buildId=I20090611-1540
+java.version=1.5.0_12
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2011-08-25 16:44:15.484
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.internal.provisional.p2.core.ProvisionException: No repository found at http://download.eclipse.org/releases/galileo/201002260900.
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.fail(AbstractRepositoryManager.java:380)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:606)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:88)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepository.addChild(CompositeMetadataRepository.java:146)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepository.<init>(CompositeMetadataRepository.java:101)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepositoryFactory.validateAndLoad(CompositeMetadataRepositoryFactory.java:127)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepositoryFactory.load(CompositeMetadataRepositoryFactory.java:87)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:54)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:669)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:617)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:88)
+	at org.eclipse.equinox.internal.provisional.p2.ui.operations.ProvisioningUtil.loadMetadataRepository(ProvisioningUtil.java:88)
+	at org.eclipse.equinox.internal.p2.ui.model.MetadataRepositoryElement.getMetadataRepository(MetadataRepositoryElement.java:123)
+	at org.eclipse.equinox.internal.p2.ui.model.MetadataRepositoryElement.fetchChildren(MetadataRepositoryElement.java:75)
+	at org.eclipse.equinox.internal.p2.ui.model.RemoteQueriedElement.fetchDeferredChildren(RemoteQueriedElement.java:33)
+	at org.eclipse.ui.progress.DeferredTreeContentManager$1.run(DeferredTreeContentManager.java:234)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.equinox.p2.metadata.repository 4 1000 2011-08-25 16:44:15.484
+!MESSAGE No repository found at http://download.eclipse.org/releases/galileo/201002260900.
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2011-08-25 16:44:15.781
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.internal.provisional.p2.core.ProvisionException: No repository found at http://download.eclipse.org/releases/galileo/201002260900.
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.fail(AbstractRepositoryManager.java:380)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:606)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:88)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepository.addChild(CompositeMetadataRepository.java:146)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepository.<init>(CompositeMetadataRepository.java:101)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepositoryFactory.validateAndLoad(CompositeMetadataRepositoryFactory.java:127)
+	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepositoryFactory.load(CompositeMetadataRepositoryFactory.java:87)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:54)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:669)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:617)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:88)
+	at org.eclipse.equinox.internal.provisional.p2.ui.operations.ProvisioningUtil.loadMetadataRepository(ProvisioningUtil.java:88)
+	at org.eclipse.equinox.internal.provisional.p2.ui.QueryableMetadataRepositoryManager.doLoadRepository(QueryableMetadataRepositoryManager.java:55)
+	at org.eclipse.equinox.internal.provisional.p2.ui.QueryableRepositoryManager.loadRepository(QueryableRepositoryManager.java:195)
+	at org.eclipse.equinox.internal.provisional.p2.ui.QueryableRepositoryManager.loadAll(QueryableRepositoryManager.java:108)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.run(PreloadingRepositoryHandler.java:71)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.equinox.p2.metadata.repository 4 1000 2011-08-25 16:44:15.781
+!MESSAGE No repository found at http://download.eclipse.org/releases/galileo/201002260900.

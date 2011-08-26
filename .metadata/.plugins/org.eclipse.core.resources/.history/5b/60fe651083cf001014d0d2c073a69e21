@@ -1,0 +1,26 @@
+public class objectTest {
+	public static void main(String[] args) {
+		MyObject o1 = new MyObject("java");
+		MyObject o2 = new MyObject("java");
+		System.out.println(o1);
+		//System.out.println(o1.toString());
+		System.out.println(o2);
+		//System.out.println(o2.toString());
+		if(o1==o2)
+			System.out.println("==비교 true");
+		if(o1.equals(o2))
+			System.out.println("equals 비교 true");
+	}
+}
+
+class MyObject {
+	String s;
+	MyObject(String s) {
+		this.s = s;
+	}
+	@Override
+	public String toString() {
+		return s;
+	}
+	public boolean equals(Object obj)
+}
