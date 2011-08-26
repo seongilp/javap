@@ -1,0 +1,34 @@
+import java.util.Vector;
+
+public class VectorTest {
+	public static void main(String[] args) {
+		Vector v = new Vector();
+		v.add(10);
+		v.add(3.14);
+		v.add("Java");
+		Employee e1 = new Employee(100, "¿Ã¿⁄πŸ", 89000.99);
+		v.add(e1);
+		for(int i = 0;i<v.size();i++) {
+			System.out.println(v.elementAt(i));
+		}
+		System.out.println(v.size());
+		System.out.println(v.capacity());
+	}
+
+	@Override
+	public String toString() {
+		return id+":"+name+":"+salary;
+		return super.toString();
+	}
+}
+
+class Employee {
+	int id;
+	String name;
+	double salary;
+	public Employee(int id, String name, double salary) {
+		this.id = id;
+		this.name = name;
+		this.salary = salary;
+	}
+}

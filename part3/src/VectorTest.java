@@ -1,0 +1,43 @@
+import java.util.Vector;
+
+public class VectorTest {
+	public static void main(String[] args) {
+		Vector<Employee> v = new Vector<Employee>();
+//		v.add(10);
+//		v.add(3.14);
+//		v.add("Java");
+		Employee e1 = new Employee(100, "이자바", 89000.99);
+		Employee e2 = new Employee(200,"박삼성",89000.99);
+		Employee e3 = new Employee(300,"홍길동",89000.99);
+		Employee e4 = new Employee(400,"장길산",89000.99);
+		v.add(e1);
+		v.add(e2);
+		v.add(e3);
+		v.add(e4);
+//		v.add(10);
+
+		for(int i = 0;i<v.size();i++) {
+			System.out.println(v.elementAt(i).name);
+		}
+		
+		System.out.println(v.size());
+		System.out.println(v.capacity());
+		System.out.println(e1.toString());
+		
+	}
+}
+
+class Employee {
+	int id;
+	String name;
+	double salary;
+	public Employee(int id, String name, double salary) {
+		this.id = id;
+		this.name = name;
+		this.salary = salary;
+	}
+	@Override
+	public String toString() {
+		return id+":"+name+":"+salary;
+	}
+}

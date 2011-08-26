@@ -1,0 +1,10 @@
+import java.util.Calendar;
+
+public class CalendarTest {
+	public static void main(String[] args) {
+		Calendar today = Calendar.getInstance();
+		int year = today.get(Calendar.YEAR);
+		int month = today.get(Calendar.MONTH);
+		System.out.println(today);
+	}
+}

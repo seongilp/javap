@@ -1,7 +1,7 @@
-#Thu Aug 25 17:07:00 KST 2011
+#Fri Aug 26 11:47:38 KST 2011
 content_assist_proposals_foreground=255,146,66
 semanticHighlighting.inheritedMethodInvocation.enabled=true
-org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8"?><templates/>
+org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8"?><templates><template autoinsert\="false" context\="newtype_context" deleted\="false" description\="Newly created files" enabled\="true" id\="org.eclipse.jdt.ui.text.codetemplates.newtype" name\="newtype">${package_declaration}\r\n${type_declaration}</template></templates>
 java_doc_default=140,63,200
 pf_coloring_argument=128,255,0
 content_assist_proposals_background=255,255,255
