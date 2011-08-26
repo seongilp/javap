@@ -7,9 +7,9 @@ public class objectTest {
 		System.out.println(o2);
 		//System.out.println(o2.toString());
 		if(o1==o2)
-			System.out.println("==ºñ±³ true");
+			System.out.println("==ï¿½ï¿½ï¿½ï¿½ true");
 		if(o1.equals(o2))
-			System.out.println("equals ºñ±³ true");
+			System.out.println("equals ï¿½ï¿½ï¿½ï¿½ true");
 	}
 }
 
@@ -22,6 +22,7 @@ class MyObject {
 	public String toString() {
 		return s;
 	}
+	// please look at below code
 	public boolean equals(Object obj) {
 		if(obj instanceof MyObject) {
 			boolean result1 = s.equals(((MyObject)obj).s);
