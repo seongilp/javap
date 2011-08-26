@@ -1,0 +1,386 @@
+객체의 형변환
+=참조형변수 형변환
+class B extebds A{}
+1.상속관계
+2.자동:하위객체생성시 자동 상위객체생성
+B b1=new B();
+A a2 = b1;
+
+A b1=new B();
+
+b1.변수-->A
+b1.메서드-->A
+b1.overriding메서드-->B
+
+3.명시적
+((B)b1).변수-->B
+((B)b1).메서드-->B
+
+
+인터페이스
+interface I1{
+ [static final public]int X = 10;
+ [public abstract]void m1();
+}
+ 1. 다중상속:abstract메서드
+ 2. 인터페이스객체생성불가느이:생성자없다
+ 3. 인터페이스명.변수명:static
+ 
+interface I2{
+ [static final public]int X = 100;
+ [public abstract]void m2();
+} 
+
+class A implements I1, I2{
+	public void m1(){} 
+	public void m2(){}
+}
+
+A a1 = new A();
+a1.m1();==>ok
+a1.m2();==>ok
+
+I1 i1 = new A();
+i1.m1();==>ok
+i1.m2();==>error
+
+
+I2 i2 = new A();
+i2.m1();==>error
+i2.m2();==>ok
+
+
+패키지
+1. 유사한 성격 클래스들, 인터페이스들, 예외들모임
+2. 관리용이, 클래스이름동일 충돌 예방, 접근제어단위
+3. java.lang.Object
+4. import : 클래스의 패키지명 알려줌(여러번)
+   import 패키지명.클래스명;
+   import 패키지명.*; 
+5. 클래스의 패키지명 설정
+   package edu.multi;
+   public class A{}
+   ===> edu\multi\A.class 저장
+   
+   package edu.test;
+   
+   import edu.multi.A;
+   
+   class B{
+    A....
+   }
+   
+예외개념
+예외클래스
+프로그래머 처리가능한 실행 오류(실행조건 발생가능)
+발생 가능성 예견 : 가능성 미리 방지
+-----------------------------
+if(i != 0) 10 / i; 
+else i = 10;
+------------------------------
+try{
+10 / i;
+}catch(A....E... e){
+ i = 10;
+} 
+-------------------------------
+
+예외처리구문
+1.try-catch
+  try-catch-finally
+예외발생문자을 포함하는 메서드내부 처리
+try{
+예외발생가능성문장;
+}catch(예외클래스 변수명){
+ 처리문장;
+}finally{
+ 반드시 수행 문장;
+}
+ 
+2.throws
+예외발생문장을 포함하는 메서드를 호출하는
+메서드내부 처리
+
+void m() throws AException{
+ m()내부 AException발생가능성문장정의
+ 처리하지 않고 다른 곳 전달
+}
+
+void ma() throws AException{
+ m();
+}
+
+================================================
+ 
+part3 자바 기본 api
+11장 java.lang.Object 클래스
+ 1. import 필요없다
+ 2. 자바 최상위 = 자동 extends Object
+ 3. Object 모든 메서드 
+ 자바 다른 모든 클래스 자동 포함
+ 4. toString()값
+ 자바 출력문장 객체 출력시에 자동 호출 내용 
+ 
+ getClass().getName()+'@'+Integer.toHexString(hashCode())
+ java.lang.Object@16진수주소
+
+
+ 5. equals()
+     
+                
+12장 java.util.Calendar:날짜,시간
+ 1. 날짜,시간 편리 기능 + 배열 저장 편리 기능 제공
+ 2. import 명시 필요
+ 3. Calendar
+ 역할 : 날짜,시간 편리 표현 기능
+ '2011-11-12' '11:12:11:12;12;12'
+ 
+ 생성자:protected (다른 패키지 상속받은 클래스 사용가능)
+ 
+ 메서드: getInstance():Calendar 객체생성
+ Calendar today = Calendar.getInstance();
+ s.o.p(today); 'asia-korea-2011-11-12-....'
+ 
+ int y = today.get(Calendar.YEAR);
+ s.o.p(y)--->2011
+ 변수:
+ static변수 
+ YEAR, MONTH, DAY_OF_MONTH,
+ DAY_OF_WEEK, DAY_OF_YEAR, HOUR, MINUTE, SECOND 
+ 
+
+Vector:일종의 배열
+
+배열
+int i[] = new int[100];
+i:1000====> 1000:[10][11],...[12][13]
+
+i = new int[150];
+i:2000====> 2000:[] + []..
+
+
+
+-동일타입의 데이터만 저장 가능
+-정적인 길이 유지
+
+
+
+Vector
+객체생성
+Vector v = new Vector(5,2);
+===> 5개 데이터 저장 공간 생성. 모자라면 2개씩 자동
+ 증가
+메서드:변수 접근 메서드 이용
+1)길이조회
+size():현재 저장 데이터 개수
+capacity():총 저장 가능한 데이터 개수
+
+2)저장
+addxxxx("java"):vector 가장 끝에 저장
+insertElementAt("java", 2):vector 3번째 위치 저장
+
+3)수정
+set(2,"jsp") :vector 3번째 위치 값을 "jsp" 변경
+
+4)삭제
+remove(2):vector 3번째 값 삭제
+remove("jsp"):"jsp" 문자열 삭제
+
+5)데이터조회
+contains("jsp"):Vector 내부 "jsp" 포함 여부 : boolean
+indexOf("jsp"):Vector 몇번째 위치 조회 : int(0~)
+elementAt(10):특정 위치 저장 값 조회 : Object
+
+Object o = new xxx();
+
+jdk 1.5 버전 추가
+1. import static java.lang.Math.PI;
+..
+S.O.P(PI);
+
+2. (형변환연산자이용: 기본형끼리만
+                       참조형끼리만)
+ auboxing                      
+int j = new Integer(100);==> autounboxing
+Integer in = 200;==>autoboxing   
+
+add(new Integer(100))==> 1.4버전까지는
+add(100) ==> 1.5버전부터는
+add(new Integer(100))==> 1.5버전부터는
+
+
+
+
+
+변수(protected:상속): 초기치변수=5 ,  증가치변수=2
+
+
+
+
+
+-동일 타입 / 서로 다른 타입의 데이터도 저장 가능
+-동적인 길이 유지
+==>Vector, HashMap, Enumeration
+  java.util.XXXSet
+            xxxtable
+            xxxMap
+            xxxList(Vector포함:순서있다, 데이터 중복 저장)
+  ==> 자바 collection api          
+             
+
+Vector v = new Vector(10);
+v.add():가장끝 저장
+v.eleementAt(1):순서 위치
+
+HashMap v = new HashMap(10);==>도서정보 저장
+v.put("title", "java")
+v.put("author", "이자바")
+v.put("date", new Date())
+"java"<===v.get("title")
+   
+   api 
+   java.lang
+   java.util.Vector
+   
+   Calendar cal = Calendar.getInstance()
+   Formatter.format("%tY %tm %te", cal, cal, cal);
+   ==> 1.5버전추가
+   
+   1.5 버전 추가
+   1) autoboxing/autounboxing
+   int i= new Integer(100);
+   2) import static java.lang.Math.PI;
+      .....
+      S.O.P(PI);
+   3) generics : Vector 내부 저장 데이터 타입 특정 타입 지정
+   
+   4)추가api
+   java.util.Formatter:Calendar 대신
+   5)추가api
+   java.util.Scanner클래스 : 키보드, 파일 입력 
+   
+            
+13장 java.io.입출력기능클래스들
+java.io.50여개클래스
+
+xxxInputStream :입력
+xxxOutputStream:출력
+XxReader:입력
+xxxWriter:출력
+
+1) 표준입출력
+xxxInputStream :입력/xxxOutputStream:출력
+표준입력:컴퓨터 표준 입력 장치(키보드) 입력
+
+System.in.read():키보드 입력 메서드명
+==> 데이터타입 변환 필요
+DataInputStream
+
+-----------------------------------------------
+1.5--> 
+java.util.Scanner클래스 : 키보드, 파일 입력 
+-----------------------------------------------
+
+
+표준출력:컴퓨터 표준 출력장치(모니터) 출력
+System.out.println()
+System.out.print()
+
+System:현재 자바 실행 컴퓨터 정보 제공 클래스이름
+System.currentTimeMills()==>1/1000초 단위
+
+System.out:컴퓨터 모니터 변수
+System.out.println(....):모니터 출력 기능 메서드명
+
+
+2) 파일입출력
+FileInputStream/FileOutputStream--> 1바이트
+FileReader/FileWriter--->2바이트
+
+생성자형태
+FileReader fr = new FileReader("a.txt"); 
+FileWriter fw = new FileWriter("a.txt"); 
+
+메서드이름
+fr.read()
+fw.write()
+
+파일 사용 종료 이후 반납 문장 필요
+(close 없으면 입출력종료---대기
+--파일 열어도 출력내용 x)
+fr.close()
+fw.close()
+
+run-rin cofigurations-입력
+a.txt b.txt--> a.txt 파일 입력하여 b.txt 출력(복사)
+
+
+=======================================================
+14장 java.lang.Thread 클래스
+               Runnable 인터페이스
+멀티스레드 구현 api
+
+프로그램(program)
+: cpu 인식 실행 가능한 이진 코드 집합
+프로세스(process)
+:현재 cpu가 실행 중인 프로그램
+IE:프로세스
+음악사이트-다운로드사이트-게시판사이트
+
+스레드(thread)
+:하나의 프로세스를 구성하는 일련의 독리적 작업 단위
+(작은 프로세스)
+
+싱글스레드(single thread)
+:
+음악시작====끝-다운로드시작====끝-게시판시작==끝
+
+멀티스레드(multi thread)
+:
+음악시작==(중지, 다운로드--중지
+게시판---음악---게시판---다운로드...
+==끝
+===> 작업전환 빨라서 동시 실행 구조(CPU 시간 분할))
+CPU1--> 음악,다운로드,게시판
+
+
+프로그래밍 순서
+클래스 정의-->객체 생성-->원하는 메서드 호출
+               
+-java.lang.Thread 클래스 이용
+1. 멀티스레드 클래스 정의
+   1-1. Thread 클래스 상속
+   1-2. run() 메서드 overriding
+   class A extends Thread{
+    public void run() {
+     다운로드,게시판,음악:동시 멀티스렏 수행 
+    }
+   }
+2. 멀티스레드 객체 생성
+   A a1 = new A();
+3. 멀티스레드 메서드 호출
+  a1.start();==>run() 메서드 시작
+   
+-java.lang.Runnable 인터페이스 이용
+class A extends javax.servlet.GenericServlet
+implements Runnable
+
+1. 멀티스레드 클래스 정의
+   1-1. Runnable 인터페이스 구현
+   1-2. run() 메서드 overriding
+   class A extends B implements Runnable{
+    public void run() {
+     다운로드,게시판,음악:동시 멀티스렏 수행 
+    }
+   }
+2. 멀티스레드 객체 생성
+   2-1. Runnable 하위객체 생성
+   A a1 = new A();
+   2-2. Thread 객체 변환
+   Thread ta = new Thread(a1);
+   
+3. 멀티스레드 메서드 호출
+  ta.start();==>run() 메서드 시작
+  
+  start()/run()
+  

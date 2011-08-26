@@ -1,0 +1,447 @@
+java programming 과정
+강 사 조 성 희
+-bluejeansh@hanmail.net
+-삼성멀티캠퍼스 전임교수
+-자바분야, 안드로이드 분야 강의
+
+목차
+part1 자바 기본 프로그래밍
+1-4장 : 월, 
+언어탄생배경, 특징, 프로그래밍 환경 tool, 
+자바프로그램 실행 과정, 식별자, 예약어, 변수, 조건문
+연산자 제어문.....
+part2 자바 객체지향 프로그래밍
+5-10장 : 화 - 목
+객체지향, 객체, 클래스, 상속
+인터페이스 this super
+overriding overloading
+
+part3 자바 기본 api
+11-14장:금(제외)
+api : sun 사 자바개발자 미리 구현 라이브러리 제공
+=====================================================
+
+2장
+1.jdk 1.5 이상 설치
+java se 구성 jdk
+jdk 1.0 1.1 ===> 1.2(java se/me/ee분리) 1.3 1.4
+===> 1.5(5.0 기존 구문 사용 + 새로운 구문 추가) 
+1.6(6.0)
+
+다운로드
+www.oracle.com(java.sun.com)
+--> download 메뉴--> java developer
+--> java se --> 1.5 --> windows --> 가입 form 입력
+--> 다운로드 저장
+
+\\70.12.108.9\공유\sw\jdk-1_5_0_20-windows-i586-p.exe
+
+  
+설치 교재 그대로
+
+(교육장 설치 완료)
+jvm + api
+jvm 제공 기능 사용 명령어
+C:\Program Files\Java\jdk1.5.0_12\bin
+
+api
+C:\Program Files\Java\jdk1.5.0_12\jre\lib/rt.jar 
+
+
+2.환경변수 path 설정
+(javac, java - 도스명령어 편리)
+시작-설정-제어판-시스템 선택
+-고급탭 이동-환경변수-시스템변수-path 선택 후 편집
+
+3.api document 설치
+api 정보 제공 도움말 별도 설치 
+
+다운로드
+www.oracle.com(java.sun.com)
+--> download 메뉴--> java developer
+--> java se --> 1.5 --> jdk, jdk document.....
+화면 아래로 스크롤--> api document --> 다운로드 저장
+
+\\70.12.108.90\공유\sw\jdk-1_5_doc.zip
+
+=====================(기본환경)==================================
+자바 프로그램(=자바 어플리케이션) 실행 과정
+
+
+1.소스파일 작성:에디터(메모장 + 도스)
+class 클래스이름 {
+ public static void main(String args[]){
+   실행 문장 ;;;;;
+ }
+}
+===> 1)대소문자 구분
+     2)c:\공유폴더/클래스이름.java
+ 
+ (도스)    
+2.컴파일(소스파일==> 텍스트==> 바이트코드변환과정 )
+javac 클래스이름.java (===>클래스이름.class 파일 자동생성)
+
+3.실행
+java 클래스이름
+
+===> 자바예약어 표시,대소문자 자동수정
+라인번호, 메뉴등록 사용(하나의 툴 )
+====> 통합개발툴(ide)
+종류
+초보자
+울트라 에디트
+에디트 플러스
+아크로 에디터
+
+중급자
+이클립스
+넷빈즈
+j빌더
+
+
+=====================================================
+4.eclipse 설치:선택적(40p)
+다운로드
+www.eclipse.org
+
+다운로드-->
+eclipse-java-galileo-win32.zip
+
+3.2 : wtp-all-in-one
+3.3 : europa
+3.4 : ganymede
+3.5 : galileo
+(버그)
+3.6 : helios
+3.7 : indigo
+
+\\70.12.108.90\공유\sw\
+eclipse-java-galileo-win32.zip
+
+압축해제(c:\)
+c:\eclipse 폴더 생성
+c:\eclipse\eclipse.exe 파일 실행
+C:\eclipse\workspace ==> 
+이클립스내에서 정의 자바 파일들 저장 폴더
+ch3 프로젝트 생성
+(자동
+C:\eclipse\workspace\ch3\src폴더 생성:*.java 파일저장
+C:\eclipse\workspace\ch3\bin폴더 생성:*.class 파일저장
+C:\eclipse\workspace\ch3\jre system library폴더 생성
+:api 저장 폴더
+)
+클래스 생성(FirstApp, main체크)
+ctrl+space bar
+클래스 저장
+자동 컴파일
+실행 : run-run as-java application
+
+자바코멘트
+c++ : //, /*  */
+자바 : javadoc 주석문  /**    */
+
+class ///// {
+public static void main(String[] args) {
+;;;;;
+}
+}
+4장 
+-식별자규칙
+1) (0-9)숫자, 일반문자(한글,영문), _, $ 구성
+2) 숫자시작불가능
+3) 대소문자 구분
+4) 예약어사용불가능(보라색)
+5) 길이무제한(2^16=65536 문자)
+ (identifier)
+
+-식별자관례(프로그래머약속:컴파일오류 X)
+클래스이름:첫문자대문자명사
+변수이름:첫문자소문자명사
+메서드이름:첫문자소문자동사(main제외)
+
+Integer
+name
+Name
+getName
+
+-예약어규칙
+50여개 소문자, 버전 다르다 
+1. assert : 1.4 버전이상 추가
+2. const, goto :
+현재 사용 불가능한 예약어 등록(식별자사용불가능)
+3. TRUE, False, NULL : X
+   true, false, null : o
+4. c, c++ 언어 비교
+sizeof 자바예약어 아니다
+c, c++ 예약어이다
+
+c:정수:integer:win:??byte
+               unix:?byte
+java :int:4byte(win,unix,...)               
+                
+
+-변수
+개념/종류/메모리변수저장공간(1장)
+데이터나 연산 결과 메모리 저장 메모리 이름 부여
+
+메모리변수저장공간
+stack(실제값/주소값)/heap(가변길이값)
+
+기본형변수(stack:실제값)
+논리값/단일문자/정수/실수
+boolean:논리값:1byte:true/false두개값만표현가능
+char:단일문자:2byte:unicode
+char표현가능문자개수 : 2^16=65536문자
+
+1bit: 0,1 이진수값표현단위
+8bit=1byte
+16bit=2byte
+----------------------------------------
+[부호]==> 1bit : 0(양수) 1(음수) 
+[부호(1bit)][값()]
+byte:1byte  [부호(1bit)][값(7bit)]
+===> -2^7 ~ 2^7-1 (-128 ~ 127)
+
+short:2byte [부호(1bit)][값(15bit)]
+===> -2^15 ~ 2^15-1 (?)
+int:4byte [부호(1bit)][값(31bit)]
+===> -2^31 ~ 2^31-1 (?)
+long:8byte [부호(1bit)][값(63bit)]
+===> -2^63 ~ 2^63-1 (?)
+
+api
+Byte.MAX_VALUE
+Byte.MIN_VALUE
+Short.MAX_VALUE
+Short.MIN_VALUE
+Integer.
+Long.
+
+3.14 ===> 0.314 * 10^1
+[부호][지수부][가수부]
+float:4byte [부호(1)][지수부(8)][가수부(23)]
+double: 8byte [부호(1)][지수부(11)][가수부(52)]
+
+ieee 754 : 컴퓨터 실수 표현 국제 표준 규격 
+
+Float.MAX_VALUE
+Double.MIN_VALUE
+
+=================================================================
+
+
+
+참조형변수(stack:주소값)---->(heap:실제값)
+배열, String클래스타입, 그밖의클래스타입, 인터페이스
+String s = "xxxxxxxx....";
+int i[] = new int[10000];
+
+
+
+-연산자
+형변환연산자(data type casting)===>(데이터타입)
+byte b = 10;
+int i = (int)b;
+i = i + 120;==>130
+1.boolean제외
+int i = 0;
+boolean b = (boolean)i;
+b===>0(true,false 두값 표현가능)
+
+2.자동형변환(형변환연산자생략가능):표현범위 커지는 쪽
+byte b = 10;
+int i = b;
+
+byte-->short-->int-->long-->float-->double
+
+3.명시적형변환(형변환연산자명시):표현범위작아지는쪽
+int i = 10;--->1010(이진수)
+byte b =(byte)i;
+i:[0 0......0  1010]:32bit
+b:[00001010]:8bit
+
+int i = 128;
+byte b =(byte)i;
+i:[0 0....0  10000000]:32bit
+b:[10000000]:8bit (-?)
+
+ma(){//내
+ double d = 3.14;
+ mb((int)d);
+}
+
+mb(int i){//api
+ 정수 기능 구현
+} 
+
+char c1 = 'a';
+int i = c1;===>'a' 유니코드숫자 97
+
+
+
+산술연산자 + - * /
+
+
+
+
+-배열
+다른언어: 여러가지 데이터 모음
+
+자바언어 :동일타입의 데이터 여러개 모은 참조형변수
+
+int i=10;==>선언문과 초기화문
+
+int i;==>변수선언문(4byte)
+i = 10;===>변수초기화문
+
+배열
+{10, 20, 30, 40, 50}:int 5개 저장 배열 생성
+1. 배열변수선언문
+int i[];
+int []i;
+stack  heap
+i:null
+
+2. 배열생성문
+i = new int[5];
+
+stack   heap
+i:100-->100:[0][0][0][0][0]
+
+정수배열: 0 자동 저장
+실수배열 0.0
+
+i.length===>i 배열 길이==.5
+0 <= index <= length-1
+
+3.배열변수초기화문
+i[0] = 10;
+i[1] = 20;
+i[2] = 30;
+i[3] = 40;
+i[4] = 50;
+i[5] = error
+
+stack   heap
+i:100-->100:
+
+int i[] = new int[5];==>배열선언과생성
+
+int i[] = {10,20,30,40,50};==>배열선언과생성,초기화문
+
+===========================
+{"자바", "jsp", "servlet"}:String 3개 저장 배열 생성
+1. 배열변수선언문
+String i[];
+String []i;
+
+stack  heap
+i:null
+
+2. 배열생성문
+i = new String[3];
+
+stack   heap
+i:100-->100:[null][null][null]
+
+
+i.length===>i 배열 길이==>3
+0 <= index <= length-1
+
+3.배열변수초기화문
+i[0] = "자바";
+i[1] = "jsp";
+i[2] = "servlet";
+
+
+stack   heap
+i:100-->100:["자바"]["jsp"]["servlet"]
+
+
+int i[] = new int[5];==>배열선언과생성
+
+int i[] = {10,20,30,40,50};==>배열선언과생성,초기화문
+
+이차원배열:배열의 배열
+{{1,2,3}, {4,5,6}, {7, 8, 9}, {10, 11,12}}
+
+int []i[] = new int[4][3];
+
+{ {1,2,3}, {4,5}, {7, 8, 9}}
+int []i[] = new int[3][];
+i[0] = new int[3];
+i[1] = new int[2];
+i[2] = new int[3];
+
+
+============================
+
+-명령행 매개변수(사용자 값 입력)
+java FirstApp 
+java FirstApp.main() 메서드 자동 호출 실행
+
+이클립스
+run --> main 
+
+class A{
+public static void main(String args[] ){
+.....===> commandline argument(명령행 매개변수)
+          String 배열만허용  
+        입력개수 args.length
+        args[1] args[99]
+}
+}
+
+java A
+==> args.length==>.0
+
+java A 자바프로그래밍 과정 환영
+
+-----(jvm자동실행문장)-------
+생성/초기화
+args = new String[3];
+args[0] = "자바프로그래밍" 
+args[1] = "과정"
+args[2] = "환영"
+---------------------------------
+java FirstApp 100 200
+
+args[0] = "100";
+args[1] = "200";
+args[0] + args[1]==>"100200"
+
++ 연산자 의미
+1. 정수, 실수 + 정수, 실수(int, double):덧셈
+2. String + String
+   String + 실수, 정수
+   :문자열결합
+   
+api 
+String-->int 변환 기능
+
+
+-조건문
+if-else :99p
+switch-case:103p
+
+-반복문
+for : 107p
+while : 110p
+do-while : 113p
+
+-이동문
+break
+continue
+return
+
+
+
+
+
+
+
+
+
+
+
+

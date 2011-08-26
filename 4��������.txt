@@ -1,0 +1,369 @@
+메서드
+[modifier] 리턴타입 이름([매개변수]){
+ 기능 구현 문장 (1번 정의 여러번 호출)
+}
+리턴타입
+Employee ma(){
+ ....
+ ....
+ return new Employee();
+}
+void ma(){
+ ....
+ ....
+ ....
+} 
+modifier
+static메서드
+클래스명.static메서드()
+Integer.parseInt(args[0])
+
+실행단계
+1.static변수, static메서드 메모리할당
+2. ....
+3. main(),객체생성,객체변수, 객체메서드 메모리할당
+static메서드 내부에는 객체변수, 객체메서드 사용불가능
+
+메서드overloading
+하나의 클래스내에 같은 이름의 메서드 여러개 정의
+매개변수 개수나 타입이나 순서 중 하나가 다르게 정의
+==> 하나의 기능을 매개변수 따라서 여러가지 제공
+parseInt("100")===>100(십진수)
+parseInt("100", 8)===>100(8진수)
+
+매개변수 전달원리
+메서드나 생성자 정의 : 외부호출 전달받을 필요 변수 정의
+==>형식매개변수
+메서드나 생성자 호출 : 형식매개변수 정의된 개수 순서 타입
+따라서 실제값 전달
+==>실매개변수
+
+실매개변수를 형식매개변수 전달
+기본형:실제값 전달
+형식매개변수 변경하여도 실매개변수 x
+
+참조형:주소값 전달
+실, 형식매개변수 동일 주소 객체 사용
+객체 내부의 값 변경되면 영향o
+
+상속의 개념
+기존 정의 클래스 재사용
+1.상속 : ~이다
+2.객체생성:~가지다
+
+상속과 변수, 메서드
+1. non-private 변수나 메서드 상속 포함 사용 가능
+2. 동일명 변수나 메서드 
+   상,하위 존재 :static : 상위클래스명.xxxx
+                 non-static : super키워드 이용 
+
+상속과 메서드overriding(우선시하다)
+상속 상,하위클래스 내부에 
+동일명 메서드 존재
+(하위클래스 메서드 내용 재정의 가능:하위클래스메서드우선실행)
+상위:super 
+
+다형성
+메서드overloading
+메서드overriding
+
+상속과 생성자 자동 호출
+"하위클래스 객체생성시에는
+자동으로 상위클래스 객체생성"
+===> 자바 생성자 첫문장 자동 super();
+     상위클래스 기본 생성자 자동 호출
+===ㅋ> 하위 변수나 메서드 + 상속 변수나 메서드      
+
+super 키워드:상위 객체 의미 키워드
+1. super.상위멤버변수명
+   super.상위메서드명()
+2. super():상위기본생성자호출. 생성자첫문장 자동 정의
+   super(변수):상위매개변수생성자호출. 
+   생성자첫문장 명시적 정의
+
+------------------------------------------------
+a=b;  (b(8바이트)의 값을 a(4바이트) 전달)(a,b 데이터타입 동일조건)
+(데이터타입)
+ 
+기본형변수 형변환
+1. boolean 제외
+2.자동형변환:연산자생략
+byte->short->int->long->float->double
+3.명시적형변환:연산자명시필요
+자동형변환의 반대
+
+참조형변수 = 객체(heap 객체데이터저장, stack 주소)
+
+객체의 형변환
+1. 상속관계
+2. 자동형변환
+:하위 객체 생성하여 상위클래스 변환 경우
+
+상위클래스명 변수명1 = new 하위클래스명();
+
+
+3. 명시적형변환
+:자동형변환되었다가 다시 원래의 하위클래스 변환 가능
+
+상위클래스명 변수명1 = new 하위클래스명();
+하위클래스명 변수명2 = (하위클래스명)변수명1;
+
+class A { i }
+class B extends A{j (+ i)}
+class C extends A{ (+i) }
+class D extends B{j (+ i)}
+
+A a1 = new A();-->형변환필요x
+
+A a2 = new B();-->자동형변환가능
+(Object, A, B )
+A a3 = new C();-->자동형변환가능
+(Object, A, C)
+A a4 = new D();-->자동형변환가능
+( Object, A, B , D)
+
+B b1 = new A();-->자동형변환오류(상위-->하위)
+(Object, A)
+
+B b2 = new C();-->자동형변환오류(상속x)
+(Object, A, C)
+=============================================
+A a2 = new B();-->자동형변환가능
+
+a2.변수-->A클래스변수
+a2.메서드-->A클래스메서드
+
+a2.overriding메서드-->B클래스메서드
+(예외:overriding:상,하위 동일명 메서드 존재 
+하위클래스 메서드 우선시하다)
+
+
+A a2 = new B();-->자동형변환가능
+B b2 = (B)a2;-->명시적형변환가능
+
+b2.변수-->B클래스변수
+b2.메서드-->B클래스메서드
+
+interace 학생{
+공부하다();
+점심먹다();
+}
+
+interface 교직원{
+일하다();
+점심먹다();
+}
+
+class 조교 implements 학생, 교직원{
+변수 생성자 메서드 추가.....
+공부하다(){}
+일하다(){}
+점심먹다(){}
+}
+
+교직원 s = new 조교();
+자동형변환 이후에 overriding메서드 : 조교
+인터페이스 상속 클래스 메서드 overriding 의무화 
+
+s.공부하다();===>error
+s.일하다();
+s.점심먹다();
+
+
+학생 s = new 조교();
+자동형변환 이후에 overriding메서드 : 조교
+인터페이스 상속 클래스 메서드 overriding 의무화 
+
+s.공부하다();
+s.일하다();===>error
+s.점심먹다();
+
+
+
+조교 s = new 조교();
+s.공부하다();
+s.일하다();
+s.점심먹다();
+
+학생 s = new 조교();-->ok
+학생 s = new 학생();===>error
+
+
+class A implements Runnable {
+ public void run(){
+ ....
+ }
+}
+
+5:객체지향언어목포, 조건
+캡슐화와 정보은닉
+상속
+다형성
+
+6 클래스와 다형성
+==>캡슐화와 정보은닉/다형성(overloading)
+7 상속과 다형성
+==>단일상속/overriding
+8 인터페이스
+==>다중상속/overriding
+
+9장 패키지
+패키지 : 유사한 성격의 클래스나 인터페이스 모임
+클래스나 인터페이스 : *.class 파일 구조 존재
+패키지 : 폴더나 디렉토리 구조 존재
+
+패키지(.) : platform 독립적
+폴더(\) : windows
+디렉토리(/) : unix
+
+
+rt.jar-->jvm api 포함 인식
+
+java\lang\Object.class 파일 존재
+==> java.lang.Object 자바소스내 사용
+
+api 패키지 160여개
+
+java.lang패키지
+java.util패키지
+java.io패키지
+
+장점
+1. 관리용이(파일을 폴더별 분류 )
+project\board\Read.class 게시판구현클래스저장
+       \member\Read.class 회원관리구현클래스저장
+       
+2.같은 이름의 클래스 사용 가능
+게시판읽기     project.board.Read
+회원정보읽기   project.member.Read
+
+3. 접근 제어 단위 사용 가능
+private < (default) < protected < public
+
+키워드
+import:클래스의 패키지명 알려줌
+
+package:사용자정의 클래스 저장 패키지명 설정
+
+ch9\src\edu\multi\test1\A.java
+       \edu\multi\test2\B.java
+       
+    bin\edu\multi\test1\A.class
+       \edu\multi\test2\B.class
+
+패키지 생성 : 이클립스 툴 
+               다른 툴 / 도스 방법 다르다
+
+패키지명 ---> 클래스명 ---> 변수, 메서드 
+
+------------------------------------------------------
+10장 예외처리(오류처리구문)
+오류개념: 자바 프로그램 실행 도중(컴파일-실행)
+          발생 오동작
+
+컴파일오류:자바 정해진 syntax 구문 어긋남
+           자바 소스 원천적 수정할 때까지 계속 발생
+           
+int i =  3.14;
+int i = (int) 3.14; 또는 double d = 3.14;
+
+
+실행오류:실행조건에 따라 발생 특이한 사건
+=예외(exception)
+예외 객체 취급 = api 예외클래스 정의=XXXException
+
+1. java.lang.ArithmeticException
+
+int i = Integer.parseInt(args[0]);
+int j = 100 / i;
+
+args[0] "100" 입력==>정상 완료
+args[0] "0" 입력==>오류발생.중단==>예외처리구문
+
+2. java.lang.ArrayIndexOutOfBoundsException
+   int i = Integer.parseInt(args[0]);
+   int j[] = new int[500];
+   j[i-1] = i;
+args[0] "100" 입력==>정상 완료
+args[0] "0" 입력==>오류발생.중단==>예외처리구문
+
+3. java.lang.ArrayIndexOutOfBoundsException
+
+   int i = Integer.parseInt(args[0]);
+args[0] 입력x===>
+
+4. java.lang.ClassCastException
+
+Object o = new String("100");
+Integer s = (Integer)o;
+s.메서드....
+
+예외처리구문
+
+1.직접처리(예외발생문장을 포함하는 메서드 내부 처리)
+try(1)-catch(1~n)
+try{
+ 예외발생가능성문장;
+ 발생 o: try중단하고 catch이동.실행
+ 발생 x: try정상수행완료(catch x)
+}
+catch(예외클래스명 변수명){
+ 예외발생시 처리 문장;
+}
+
+(jvm 0으로 나누는 경우 자동 객체생성)
+Exception e = new ArithmeticException();
+Exception e = new xxxxException();
+
+---------------------------------------------
+try{
+ 1;
+}catch(AException e){
+ 3;
+}catch(BException e){
+ 4;
+}finally{->항상(예외발생유무,타입무관,catch유무)
+ 2;
+}
+5;
+
+1번 문장 Exception 발생 x: 1-2-5
+1번 문장 AException 발생 : 3-2-5
+1번 문장 BException 발생 : 4-2-5
+1번 문장 CException 발생 : 2
+(catch 못하는 경우)
+---------------------------------------------
+try(1)-catch(1~n)-finally(0~1)
+
+finally : 시스템 공유 자원 사용한 후 반납 문장 정의
+(파일, db)
+13장
+a.txt 파일 입력
+try{
+1.a.txt 파일 열기(windows요청허락)
+2.a.txt 파일 읽기--예외발생--중단--catch이동
+3.a.txt 파일 닫기(windows 반납:)
+}catch(IOException e){
+
+}finally{
+3.a.txt 파일 닫기
+}
+
+
+
+2.간접처리(예외발생문장을 포함하는 메서드를 
+호출하는 다른 메서드 내부 처리)
+throws
+
+class A extends Exception ---> checked exception
+(컴파일러 반드시 처리 요구):ClassNotFoundException
+
+class B extends RuntimeException ---> unchecked exception
+(컴파일러 무시):ArithmeticException
+
+1.0
+1.1 
+...
+1.5
+
+

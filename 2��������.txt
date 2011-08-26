@@ -1,0 +1,460 @@
+자바탄생배경과 특징
+1.platform 독립적(write once, run anywhere:wora)
+2.c,c++ 구문 유사
+3.웹브라우저 다운로드 실행 : 애플릿
+
+자바플랫폼구성
+1.jdk 1.5 이상 설치
+2.환경변수 path 설정
+3.api document 설치
+4.이클립스 
+
+자바프로그램실행과정
+1.자바소스파일작성(클래스이름.java)
+class 이름{
+ public static void main(String args[]){
+   java.exe 명령(run 메뉴) 실행 문장;
+ }
+}
+2.javac 클래스이름.java(이클립스 자동컴파일)
+
+3.java 클래스이름(run 메뉴)
+
+
+식별자
+첫문자는 숫자가 아닌 숫자, 문자, _, $ 구성
+대소문자구별
+예약어사용불가능
+식별자길이무제한
+
+클래스:대문자시작명사
+변수:소문자시작명사
+메서드:소문자시작동사
+
+
+예약어
+50여개 소문자 
+1. TRUE, FALSE, NULL : X
+2. const, goto : 현재 사용불가능 키워드
+3. sizeof : 자바 키워드 아니다
+4. assert : java -version:1.4 이상
+
+변수(메모리 저장 값의 성격:실제값/주소값)
+
+기본형변수
+내장타입,종류, 길이 한정
+boolean(1)
+char(2)
+byte(1) short(2) int(4) long(8)
+float(4) double(8)
+
+참조형변수(heap 영역 실제 데이터 저장)
+사용자타입, 종류, 길이 가변
+배열
+
+
+연산자
+(데이터타입):형변환연산자
+1.boolean제외
+2.자동형변환
+byte(1)-> short(2).. int(4) long(8) -->float(4) double(8)
+3.명시적형변환
+
+++  y = x++;   y = ++x;
+--
+% : 나머지
+&&
+||
+==
+=
+조건식(boolean)?true결과:false결과
+
+배열
+int []arr = new int[100];
+arr.length==.100
+arr[0] ~ arr[99]
+
+명령행 매개변수
+class 이름{
+ public static void main(String args[]){
+   java.exe 명령(run 메뉴) 실행 문장;
+   args[9]
+   int result = Integer.parseInt(args[0]);
+   double result = Double.parseDouble(args[0]);   
+ }
+}
+
+class A{}==>컴파일(실행x)
+run-run configurations-arguments-값메뉴나 java.exe 명령 ===> main 메서드 찾아서 호출
+
+
+조건문
+if-else
+-----------------------------------------
+if(boolean조건식) {
+ true 수행 문장;
+}
+-------------------------------------
+if(boolean조건식) {
+ true 수행 문장;
+}
+else {
+ false 수행 문장;
+}
+---------------------------------------
+if(조건1) {
+ 조건1 true 수행 문장;
+}
+else if(조건2){
+ 조건1 false 이고 조건2 true 수행 문장;
+}else if(...)
+ 
+--------------------------------------- 
+switch(int){
+case 값1:
+int변수가 값1과 동일한 경우 수행 문장;
+break;--->switch중단
+case 값2:
+int변수가 값2과 동일한 경우 수행 문장;
+break;--->switch중단
+.....
+.....
+default:
+위에 나열한 case들과 일치하지 않는 나머지 경우
+수행 문장;
+}
+////////
+
+반복문
+1-10 정수 총합
+1 + 2 + 3 + .... + 10
+for(int i = 1; i <= 10; i ++ ){
+ sum = sum + i;
+}
+1-10 홀수 총합
+1 + 2 + 3 + .... + 10
+for(int i = 1; i <= 10; i= i+2 ){
+ sum = sum + i;
+}
+
+for(반복시작문장; 반복조건식; 변화식 ){
+ 반복 수행 필요 문장
+}
+===> 유한회수 반복
+
+ 
+while
+1-10 정수 총합
+1 + 2 + 3 + .... + 10
+
+int i = 1;
+while(i <= 10){
+ sum = sum + i;
+ i++;
+}
+
+while(true){
+ sum = sum + i;
+ if(sum == 100) 중단문자이;
+}
+===>무한회수 
+
+for(;;){}
+
+
+do-while:최소 1번 이상 수행 필요 
+int i = 11;
+do{
+ sum = sum + i;
+ i++;
+}while(i <= 10);
+...
+for:유한
+while(0번이상), do-while(1번이상) :무한
+
+이동문
+break
+1. switch블록 중단하고 블록 다음 문장 이동
+
+2. 반복문블록 중단하고 반복문 다음 문장 이동(반복x)
+while(true){
+ sum = sum + i;
+ if(sum == 100) break;
+ s.o.p(sum);
+}
+......
+
+continue
+2. 반복문블록 일시생략하고 반복문 처음 문장 이동
+나머지 반복 계속 수행
+while(true){
+ sum = sum + i;
+ if(sum == 100 ) continue;
+ s.o.p(sum);
+}
+
+
+part2 자바 객체지향 프로그래밍
+선언부
+[modifier] : 클래스 선언나 멤버부 모두 사용 가능
+접근권한(사용권한)이나 활용방법 지정 몇개 키워드들
+
+
+[modifier] class 클래스이름 [extends :7장...]
+                             [implements: 8장...]
+ {
+ 
+[modifier]멤버변수:객체정적특성표현
+[modifier]메서드:객체동적특성표현
+[modifier]생성자(constructor):클래스정의한후에 객체생성과정에서
+                   수행 내용 정의 공간
+
+내부클래스:필요시 선택적 추가 포함
+
+}
+
+내부클래스형태:
+class A{-->outer class
+ class B{}-->A 클래스의 inner class
+}
+
+-------------------------------------
+
+class B{class A{} }
+
+-------------------------------------
+안드로이드폰 gui
+--------------------------------------
+
+6장
+클래스구조--->객체생성
+선언부,modifier
+객체생성의미, 문장 분석, 메모리변화
+멤버변수,modifier의미
+생성자
+메서드
+
+-----------A.java 또는 B.java---
+class A{}===>
+class B{}===>
+------------------------------
+
+-----------A.java -------------
+public class A{}===>
+class B{}===>
+------------------------------
+
+-----------A.java -------------
+class A{public static void main(..)}===>
+class B{}===>
+------------------------------
+
+절차지향언어
+----------변수사용범위---------------
+program A {
+ 전역변수선언
+ 함수1(){
+  지역변수선언:함수1 수행동안 범위엣만 사용
+ }
+ 함수2(){
+ }
+}
+----------------------------
+
+객체지향언어
+----------멤버변수 <---> 지역변수 -------------------
+class A{
+멤버변수선언
+[modifier] 데이터타입 변수명 = 값;
+접근:public protected private (default)
+활용:static final
+
+
+메서드1(){
+ 지역변수선언:메서드1에서만사용
+}
+메서드2(){
+}
+}
+class B{}
+
+-------------------------------
+
+기본형변수/참조형변수 : 메모리저장값의 성격
+멤버변수(기본,참조)/지역변수(기본,참조):클래스전체/메서드내부 변수범위(scope)
+
+값 수정 불가능/공유변수
+
+활용:static final
+
+멤버변수 : 공통값 공유 / 객체마다 개별적
+non-static 변수
+1)객체마다 개별적
+2)객체영역 저장
+3)객체변수
+4)클래스정의-->객체생성--->객체참조변수명.객체변수
+class A{
+ int i = 10;
+}
+
+A a1 = new A();
+a1.i ...
+5) 객체변수는 클래스만 정의하고선 사용 불가능
+클래스 정의--->클래스명.static변수
+class A{
+ int i = 10;
+}
+
+A.i ===>error
+A a1 = new A()
+a1.i...
+
+
+ 
+static 변수
+1)공통값 공유
+2)클래스영역 저장
+3)클래스변수
+4)클래스 정의--->클래스명.static변수
+class A{
+ static int i = 10;
+}
+
+A.i ...
+5)클래스 정의--->객체생성--.객체참조변수명.static변수
+class A{
+ static int i = 10;
+}
+
+A a1 = new A();
+a1.i
+
+final 변수:값 수정 불가능=상수
+static final 
+1) 원주율 : 절대불변의 진리값
+class Circle{
+int r;
+final double pi = 3.14;
+calc(){
+ r*r*pi;
+ pi = pi + 1;===>오류발생
+}
+}
+2) 자바 규칙 얻어진 값 
+Integer.MAX_VALUE = 2^31-1
+
+int 4byte 정수 표현(2^31-1)
+
+class Integer {
+...
+ static final public int MAX_VALUE = 2^31-1;
+ parseInt(){
+ String===>int 변경
+}
+}
+3) 공유 변수값 수정 불가능
+
+api document 
+java.lang.Integer.MAX_VALUE
+java.lang.Integer.parseInt()
+java.lang.Math.PI
+
+패키지 --> 클래스 --> 변수
+패키지 --> 클래스 --> 메서드
+
+4) 대문자 구성 이름 허용
+
+멤버변수 / 생성자 / 메서드
+final : 
+enum : jdk 1.5 버전 이후 
+       final변수만 모아놓은 일종의 클래스
+        
+생성자 (constructor)
+
+Employee  hong       = new            Employee();
+클래스명	참조변수명  객체생성연산자 생성자호출;
+
+1. 호출위치 : new 키워드 뒤 호출
+2. 용도 : 객체생성시점 수행 문장 정의 호출
+일반적으로 객체생성시마다 반복적 수행 필요 문장 정의
+예) 객체변수값 초기화 문장 정의
+
+3. 클래스 이름과 같다
+4. 모든 클래스 자동 기본 생성자 정의
+   클래스명(){super();}
+5. 사용자 생성자 정의 변경 가능
+자동 기본 생성자 삭제
+6. 생성자 형태
+[modifier] 클래스이름([변수]){
+  객체생성시점 수행 문장;
+}
+7.생성자 overloading 가능
+하나의 클래스 내부에 같은 이름의 생성자 여러개 정의
+매개변수 리스트 다르게 정의
+(개수나 타입이나 순서 중 하나가 다르게 정의)
+===> ?
+동일 타입의 객체 생성하는 방법 다양하게 제공
+선택적 객체 생성자 호출 가능
+객체 생성 형태 다르게 보임
+
+--객체지향언어 목표:코드 재사용
+--객체지향언어 조건
+1) 캡슐화구조(데이터+메서드묶음), 정보은닉 구현
+3) 상속 구현
+4) 다형성 구현(polymorphism)
+   - 생성자  overloading
+   - ?
+   - ?
+===> 6, 7, 8장   
+
+ 
+ ma(){
+ byte b[] = {65, 66, 67, 68};==> 유니코드값 배열
+ String sb = new String(b);==>"ABCD"
+ 
+ mb(sb);
+ }
+ 
+ mb(String s){
+ s.length();==>문자열 개수 카운트
+ s.toLowerCase();==>소문자변경기능
+ }
+ 
+ 
+8.this 키워드 가능
+현재 자신의 객체 의미 키워드
+class A{
+ this....===> A객체 의미
+}
+
+class A{
+ int j = 10;==>멤버변수
+ A(int i){==>매개변수 : 호출하는 곳에 전달 변수 저장
+  int k = 20;==>지역변수
+  s.o.p(i + j + k);
+ }
+}
+
+...main
+A a1 = new A(100);
+  
+ 1)멤버변수와 지역변수 혹은 멤버변수와 매개변수
+ 이름이 같은 경우 구분(의미 명확 구분 전달)
+    this.멤버변수
+    
+ 2)같은 클래스 내부의 다른 생성자 호출
+ (생성자 overloading시에)(재사용성)
+    this()
+
+
+자바 객체 의미 키워드 : this, super
+
+
+  
+   
+
+
+
+
+
+
